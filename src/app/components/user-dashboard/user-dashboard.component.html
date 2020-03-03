@@ -1,0 +1,33 @@
+
+<div class="card">
+    <h5 class="card-header">Usuarios <a routerLink="/panel/nuevo">nuevo</a></h5>
+    <div class="card-body">
+        <div class="alert alert-success" role="alert" *ngIf="message != ''">
+            {{ message }}
+        </div>
+        <table class="table table-responsive w-100 d-block d-md-table">
+            <tr>
+                <th>Id</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th class="text-center">Modificar</th>
+                <th class="text-center">Borrar</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.username | ucfirst }}</td>
+                <td>{{ user.email }}</td>
+                <td class="text-center">
+                    <a [routerLink]="['/panel/modificar', user.id]">
+                        <span [outerHTML]="editIcon | sanitizer"></span>
+                    </a>
+                </td>
+                <td class="text-center"> 
+                    <a (click)="deleteUser(user.id)" class="red-color">
+                        <span [outerHTML]="deleteIcon | sanitizer"></span>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

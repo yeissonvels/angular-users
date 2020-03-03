@@ -1,0 +1,29 @@
+
+header {
+    background: #F7F7F7;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    padding: 3px;
+}
+
+.active {
+    background: orange;
+}
+
+a.active {
+    color: #ffffff;
+}
+
+ul {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+}
